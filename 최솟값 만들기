@@ -1,0 +1,32 @@
+intansecdingCompare(constvoid* data1, constvoid* data2)
+{
+	int first = *((int*)data1);
+	int second = *((int*)data2);
+	if (first > second) 
+		return 1;
+	elseif (first == second) 
+		return 0;
+	else
+		return -1;
+}
+intdecendingCompare(constvoid* data1, constvoid* data2)
+{
+	int first = *((int*)data1);
+	int second = *((int*)data2);
+	if (second > first) 
+		return 1;
+	elseif (first == second) 
+		return 0;
+	else
+		return -1;
+}
+intsolution(intA[], size_tA_len, intB[], size_tB_len) {
+	int sum = 0;
+	qsort(A, A_len, sizeof(int), ansecdingCompare);
+	qsort(B, B_len, sizeof(int), decendingCompare);
+	for (inti = 0; i<A_len; i++)
+	{
+		sum += A[i] * B[i];
+	}
+	return sum;
+}
